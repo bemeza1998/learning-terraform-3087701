@@ -35,7 +35,7 @@ module "blog_autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "6.9.0"
   
-  name = blog
+  name = "blog"
   min_size = 1
   max_size = 2
 
@@ -64,12 +64,6 @@ module "blog_alb" {
       backend_protocol = "HTTP"
       backend_port     = 80
       target_type      = "instance"
-      targets = {
-        my_target = {
-          target_id = aws_instance.blog.id
-          port = 80
-        }
-      }
     }
   ]
 
