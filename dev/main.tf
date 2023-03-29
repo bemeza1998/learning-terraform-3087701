@@ -1,3 +1,3 @@
 module "dev" {
-    path = "../modules/blog"
+    source = "../modules/blog"
 }
